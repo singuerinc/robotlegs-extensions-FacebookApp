@@ -1,4 +1,4 @@
-package net.singuerinc.labs.robotlegs.bender.extensions.facebook.view {
+package robotlegs.bender.extensions.facebook.view {
 	import com.bit101.components.Label;
 	import com.bit101.components.List;
 	import com.bit101.components.PushButton;

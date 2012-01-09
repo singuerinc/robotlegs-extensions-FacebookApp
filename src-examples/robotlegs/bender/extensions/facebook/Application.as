@@ -1,17 +1,17 @@
-package net.singuerinc.labs.robotlegs.bender.extensions.facebook {
-	import net.singuerinc.labs.robotlegs.bender.extensions.facebook.view.MainView;
-
+package robotlegs.bender.extensions.facebook {
 	import robotlegs.bender.bundles.classic.ClassicRobotlegsBundle;
 	import robotlegs.bender.core.api.ContextBuilderEvent;
 	import robotlegs.bender.core.api.IContext;
 	import robotlegs.bender.core.api.IContextBuilder;
 	import robotlegs.bender.core.impl.ContextBuilder;
-	import robotlegs.bender.extensions.facebook.BasicFacebookAppExtension;
 	import robotlegs.bender.extensions.facebook.impl.events.FacebookEvent;
+	import robotlegs.bender.extensions.facebook.view.MainView;
 
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
+
+
 
 	/**
 	 * @author nahuel.scotti @ gmail.com

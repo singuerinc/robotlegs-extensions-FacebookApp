@@ -1,4 +1,4 @@
-package net.singuerinc.labs.robotlegs.bender.extensions.facebook.view {
+package robotlegs.bender.extensions.facebook.view {
 	import robotlegs.bender.extensions.facebook.impl.events.FacebookEvent;
 	import robotlegs.bender.extensions.facebook.impl.model.FacebookUser;
 	import robotlegs.bender.extensions.mediatorMap.impl.Mediator;
