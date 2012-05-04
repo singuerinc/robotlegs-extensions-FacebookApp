@@ -6,9 +6,11 @@ import flash.events.MouseEvent;
 import robotlegs.bender.bundles.mvcs.Mediator;
 import robotlegs.bender.framework.api.IContext;
 import robotlegs.extensions.facebook.api.model.feed.IFacebookPost;
+import robotlegs.extensions.facebook.api.model.sharer.IFacebookSharer;
 import robotlegs.extensions.facebook.impl.events.FacebookEvent;
 import robotlegs.extensions.facebook.impl.model.FacebookUser;
 import robotlegs.extensions.facebook.model.feed.FacebookPost;
+import robotlegs.extensions.facebook.model.sharer.FacebookSharer;
 
 /**
  * @author nahuel.scotti @ gmail.com
@@ -55,7 +57,9 @@ public class MainViewMediator extends Mediator {
     }
 
     private function onClickOnSharerButton(event:MouseEvent):void {
-        var data:Object = {url:'https://github.com/singuerinc/Robotlegs-Facebook-Extension', title:'Robotlegs-Facebook-Extension'};
+        var data:IFacebookSharer = new FacebookSharer();
+        data.url = 'https://github.com/singuerinc/Robotlegs-Facebook-Extension';
+        data.title = 'Robotlegs-Facebook-Extension';
         dispatch(new FacebookEvent(FacebookEvent.SHARER, data));
     }
 
