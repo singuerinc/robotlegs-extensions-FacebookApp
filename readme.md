@@ -8,7 +8,7 @@
 
 ## Configure extension:
 
-    public class ApplicationConfig {
+    public class FacebookAppConfig {
         [Inject]
         public var eventDispatcher:IEventDispatcher;
         [Inject]
