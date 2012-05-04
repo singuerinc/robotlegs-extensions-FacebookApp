@@ -11,8 +11,7 @@ import robotlegs.extensions.facebook.view.MainViewMediator;
 /**
  * @author nahuel.scotti @ gmail.com
  */
-public class ApplicationConfig {
-    private var _api_key:String;
+public class FacebookAppConfig {
     [Inject]
     public var eventDispatcher:IEventDispatcher;
     [Inject]
@@ -22,21 +21,17 @@ public class ApplicationConfig {
     [Inject]
     public var contextView:DisplayObjectContainer;
 
-    public function ApplicationConfig(api_key:String) {
-        _api_key = api_key;
-    }
-
     [PostConstruct]
     public function init():void {
 
-        service.api_key = _api_key;
+        service.api_key = 'YOUR_APP_KEY_HERE';
 
         mediatorMap.map(MainView).toMediator(MainViewMediator);
 
         var main:MainView = new MainView();
         contextView.addChild(main);
 
-        //TODO: ¿Por qué lo hace la mediación automática?
+        //FIXME: ¿Por qué lo hace la mediación automática?
         mediatorMap.mediate(main);
 
         eventDispatcher.dispatchEvent(new FacebookEvent(FacebookEvent.API_INIT_REQUEST));

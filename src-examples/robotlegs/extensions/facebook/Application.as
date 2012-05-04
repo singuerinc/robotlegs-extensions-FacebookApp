@@ -24,7 +24,7 @@ public class Application extends Sprite {
                 .extend(
                 MVCSBundle,
                 FacebookExtension);
-        _context.configure(new ApplicationConfig('App_ID_or_API_Key'), this);
+        _context.configure(FacebookAppConfig, this);
     }
 }
 }
