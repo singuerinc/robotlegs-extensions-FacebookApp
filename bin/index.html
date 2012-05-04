@@ -1,50 +1,65 @@
 <!DOCTYPE html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title></title>
-<style type="text/css">
-body {
-	background-repeat: no-repeat;
-	background-color: #ccc;
-	margin-left: 13px;
-	margin-top: 48px;
-}
+    <title>Robotlegs Facebook Extension</title>
+    <style type="text/css">
+        body {
+            background-repeat: no-repeat;
+            background-color: #ccc;
+            margin-left: 13px;
+            margin-top: 48px;
+        }
 
-#content {
-	width: 800px;
-	height: 600px;
-	background-color: #fff;
-}
+        #content {
+            width: 800px;
+            height: 600px;
+            background-color: #fff;
+        }
 
-#swf {
-	position: absolute;
-	z-index: 0;
-}
-</style>
-<script type="text/javascript"
-	src="http://connect.facebook.net/en_US/all.js"></script>
-<script type="text/javascript" src="swfobject.js"></script>
+        #swf {
+            position: absolute;
+            z-index: 0;
+        }
+    </style>
+    <script type="text/javascript" src="swfobject.js"></script>
 </head>
 <body>
-	<div id="fb-root"></div>
-	<div id="content">
-		<div id="swf"></div>
-	</div>
-	<script>
-		var params = {
-			backgroundColor : '#ffffff',
-			scale : 'noscale',
-			wmode : 'opaque'
-		};
-		var attributes = {
-			attributes : 'swf',
-			id : 'swf',
-			name : 'swf'
-		};
+<div id="fb-root"></div>
+<div id="swf"></div>
+<script>
+    window.fbAsyncInit = function () {
 
-		var swf = "application.swf";
-		swfobject.embedSWF(swf, "swf", "800", "600", "10.0", "expressInstall.swf", null, params, attributes);
-	</script>
+        swfobject.embedSWF(
+                "application.swf",
+                "swf",
+                "800",
+                "600",
+                "10.2",
+                "expressInstall.swf",
+                null,
+                {
+                    backgroundColor:'#ffffff',
+                    scale:'noscale',
+                    wmode:'opaque'
+                },
+                {
+                    attributes:'swf',
+                    id:'swf',
+                    name:'swf'
+                }
+        );
+
+    };
+    (function (d) {
+        var js, id = 'facebook-jssdk';
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement('script');
+        js.id = id;
+        js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+</script>
 </body>
 </html>
