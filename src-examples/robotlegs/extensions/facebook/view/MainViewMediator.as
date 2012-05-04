@@ -5,8 +5,10 @@ import flash.events.MouseEvent;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 import robotlegs.bender.framework.api.IContext;
+import robotlegs.extensions.facebook.api.model.feed.IFacebookPost;
 import robotlegs.extensions.facebook.impl.events.FacebookEvent;
 import robotlegs.extensions.facebook.impl.model.FacebookUser;
+import robotlegs.extensions.facebook.model.feed.FacebookPost;
 
 /**
  * @author nahuel.scotti @ gmail.com
@@ -58,12 +60,12 @@ public class MainViewMediator extends Mediator {
     }
 
     private function onClickOnPostToFeedButton(event:MouseEvent):void {
-        var data:Object = {};
-        data.name = 'Robotlegs-Facebook-Extension';
+        var data:IFacebookPost = new FacebookPost();
+        data.name = 'Robotlegs-Facebook-Extension name';
         data.link = 'https://github.com/singuerinc/Robotlegs-Facebook-Extension';
         data.picture = '';
-        data.caption = 'Robotlegs-Facebook-Extension';
-        data.description = 'Robotlegs-Facebook-Extension';
+        data.caption = 'Robotlegs-Facebook-Extension caption';
+        data.description = 'Robotlegs-Facebook-Extension description';
         dispatch(new FacebookEvent(FacebookEvent.USER_POST_TO_FEED, data));
     }
 
