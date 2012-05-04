@@ -31,7 +31,6 @@ public class FacebookAppConfig {
         var main:MainView = new MainView();
         contextView.addChild(main);
 
-        //FIXME: ¿Por qué lo hace la mediación automática?
         mediatorMap.mediate(main);
 
         eventDispatcher.dispatchEvent(new FacebookEvent(FacebookEvent.API_INIT_REQUEST));

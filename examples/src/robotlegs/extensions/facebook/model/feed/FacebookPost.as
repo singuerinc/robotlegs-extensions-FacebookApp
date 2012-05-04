@@ -17,7 +17,7 @@ public class FacebookPost extends Object implements IFacebookPost{
     private var _source:String;
     private var _name:String;
     private var _caption:String;
-    private var _decription:String;
+    private var _description:String;
     private var _properties:Object;
     private var _actions:Object;
     private var _ref:String;
@@ -87,11 +87,11 @@ public class FacebookPost extends Object implements IFacebookPost{
     }
 
     public function set description(value:String):void {
-        _decription = value;
+        _description = value;
     }
 
     public function get description():String {
-        return _decription;
+        return _description;
     }
 
     public function set properties(value:Object):void {
