@@ -8,9 +8,9 @@ import robotlegs.bender.framework.api.IContext;
 import robotlegs.extensions.facebook.api.model.feed.IFacebookPost;
 import robotlegs.extensions.facebook.api.model.sharer.IFacebookSharer;
 import robotlegs.extensions.facebook.impl.events.FacebookEvent;
-import robotlegs.extensions.facebook.impl.model.FacebookUser;
-import robotlegs.extensions.facebook.model.feed.FacebookPost;
-import robotlegs.extensions.facebook.model.sharer.FacebookSharer;
+import robotlegs.extensions.facebook.impl.model.user.FacebookUser;
+import robotlegs.extensions.facebook.impl.model.feed.FacebookPost;
+import robotlegs.extensions.facebook.impl.model.sharer.FacebookSharer;
 
 /**
  * @author nahuel.scotti @ gmail.com

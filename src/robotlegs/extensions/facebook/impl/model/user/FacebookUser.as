@@ -1,4 +1,4 @@
-package robotlegs.extensions.facebook.impl.model {
+package robotlegs.extensions.facebook.impl.model.user {
 import flash.events.IEventDispatcher;
 
 import robotlegs.extensions.facebook.impl.events.FacebookEvent;

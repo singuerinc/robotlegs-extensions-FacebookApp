@@ -8,7 +8,7 @@ import robotlegs.bender.framework.api.IContext;
 
 import robotlegs.bender.framework.api.ILogger;
 import robotlegs.extensions.facebook.api.services.user.IFacebookUserLoginService;
-import robotlegs.extensions.facebook.impl.model.FacebookUser;
+import robotlegs.extensions.facebook.impl.model.user.FacebookUser;
 
 /**
  * @author nahuel.scotti @ gmail.com

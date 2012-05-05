@@ -4,7 +4,7 @@
  * Date: 5/4/12
  * Time: 7:25 PM
  */
-package robotlegs.extensions.facebook.model.feed {
+package robotlegs.extensions.facebook.impl.model.feed {
 import robotlegs.extensions.facebook.api.model.feed.IFacebookPost;
 
 public class FacebookPost extends Object implements IFacebookPost{

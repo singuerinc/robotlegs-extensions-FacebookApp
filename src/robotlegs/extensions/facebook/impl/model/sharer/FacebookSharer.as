@@ -4,7 +4,7 @@
  * Date: 5/4/12
  * Time: 10:38 PM
  */
-package robotlegs.extensions.facebook.model.sharer {
+package robotlegs.extensions.facebook.impl.model.sharer {
 import robotlegs.extensions.facebook.api.model.sharer.IFacebookSharer;
 
 public class FacebookSharer implements IFacebookSharer {

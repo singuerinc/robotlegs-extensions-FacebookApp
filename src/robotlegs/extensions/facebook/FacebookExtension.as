@@ -18,7 +18,7 @@ import robotlegs.extensions.facebook.impl.controller.user.FacebookGetUserBasicDa
 import robotlegs.extensions.facebook.impl.controller.user.FacebookLoginCommand;
 import robotlegs.extensions.facebook.impl.controller.user.FacebookLogoutCommand;
 import robotlegs.extensions.facebook.impl.events.FacebookEvent;
-import robotlegs.extensions.facebook.impl.model.FacebookUser;
+import robotlegs.extensions.facebook.impl.model.user.FacebookUser;
 import robotlegs.extensions.facebook.impl.services.feed.FacebookPostToFeedService;
 import robotlegs.extensions.facebook.impl.services.friends.FacebookGetFriendsDataService;
 import robotlegs.extensions.facebook.impl.services.init.FacebookInitAPIService;
