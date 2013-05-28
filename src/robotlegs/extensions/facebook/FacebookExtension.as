@@ -1,9 +1,15 @@
+//------------------------------------------------------------------------------
+//  Copyright (c) 2012-2013 the original author or authors. All Rights Reserved.
+//
+//  NOTICE: You are permitted to use, modify, and distribute this file
+//  in accordance with the terms of the license agreement accompanying it.
+//------------------------------------------------------------------------------
 package robotlegs.extensions.facebook {
 import com.facebook.graph.data.FacebookAuthResponse;
 
 import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
 import robotlegs.bender.framework.api.IContext;
-import robotlegs.bender.framework.api.IContextExtension;
+import robotlegs.bender.framework.api.IExtension;
 import robotlegs.extensions.facebook.api.services.feed.IFacebookPostToFeedService;
 import robotlegs.extensions.facebook.api.services.friends.IFacebookUserGetFriendsDataService;
 import robotlegs.extensions.facebook.api.services.share.IFacebookSharerService;
@@ -27,10 +33,7 @@ import robotlegs.extensions.facebook.impl.services.user.FacebookUserGetBasicData
 import robotlegs.extensions.facebook.impl.services.user.FacebookUserLoginService;
 import robotlegs.extensions.facebook.impl.services.user.FacebookUserLogoutService;
 
-/**
- * @author nahuel.scotti @ gmail.com
- */
-public class FacebookExtension implements IContextExtension {
+public class FacebookExtension implements IExtension {
 
     public function extend(context:IContext):void {
 
@@ -50,7 +53,7 @@ public class FacebookExtension implements IContextExtension {
         var commandMap:IEventCommandMap = context.injector.getInstance(IEventCommandMap);
 
         // commands
-        commandMap.map(FacebookEvent.API_INIT_REQUEST, FacebookEvent, true).toCommand(FacebookInitAPICommand);
+        commandMap.map(FacebookEvent.API_INIT_REQUEST, FacebookEvent).toCommand(FacebookInitAPICommand);
         commandMap.map(FacebookEvent.USER_LOGIN_REQUEST, FacebookEvent).toCommand(FacebookLoginCommand);
         commandMap.map(FacebookEvent.USER_LOGOUT_REQUEST, FacebookEvent).toCommand(FacebookLogoutCommand);
         commandMap.map(FacebookEvent.USER_GET_BASIC_DATA, FacebookEvent).toCommand(FacebookGetUserBasicDataCommand);

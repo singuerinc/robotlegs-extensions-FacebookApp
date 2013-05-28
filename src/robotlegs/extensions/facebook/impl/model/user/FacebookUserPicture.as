@@ -4,15 +4,15 @@
 //  NOTICE: You are permitted to use, modify, and distribute this file
 //  in accordance with the terms of the license agreement accompanying it.
 //------------------------------------------------------------------------------
-package robotlegs.extensions.facebook.impl.guards {
-import com.facebook.graph.data.FacebookAuthResponse;
+package robotlegs.extensions.facebook.impl.model.user {
+public class FacebookUserPicture {
 
-public class FacebookLoginGuard {
-    [Inject]
-    public var authResponse:FacebookAuthResponse;
+    public var url:String;
+    public var is_silhouette:Boolean;
 
-    public function approve():Boolean {
-        return authResponse.uid != null && authResponse.accessToken != null;
+    public function FacebookUserPicture(data:Object) {
+        this.url = data.url;
+        this.is_silhouette = data.is_silhouette;
     }
 }
 }

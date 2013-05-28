@@ -1,15 +1,18 @@
+//------------------------------------------------------------------------------
+//  Copyright (c) 2012-2013 the original author or authors. All Rights Reserved.
+//
+//  NOTICE: You are permitted to use, modify, and distribute this file
+//  in accordance with the terms of the license agreement accompanying it.
+//------------------------------------------------------------------------------
 package robotlegs.extensions.facebook.impl.services.friends {
 import com.facebook.graph.Facebook;
 
 import robotlegs.bender.framework.api.IContext;
 import robotlegs.bender.framework.api.ILogger;
-
 import robotlegs.extensions.facebook.api.services.friends.IFacebookUserGetFriendsDataService;
 import robotlegs.extensions.facebook.impl.model.user.FacebookUser;
+import robotlegs.extensions.facebook.impl.model.user.FacebookUserPicture;
 
-/**
- * @author nahuel.scotti @ gmail.com
- */
 public class FacebookGetFriendsDataService implements IFacebookUserGetFriendsDataService {
     [Inject]
     public var user:FacebookUser;
@@ -21,7 +24,7 @@ public class FacebookGetFriendsDataService implements IFacebookUserGetFriendsDat
     public function getFriends():void {
         _logger = context.getLogger(this);
         _logger.info('Get Facebook User friends data...');
-        Facebook.api('/me/friends', handleFriendsLoad, {fields:'name,picture'});
+        Facebook.api('/me/friends', handleFriendsLoad, {fields: 'name,picture'});
     }
 
     private function handleFriendsLoad(response:Object, fail:Object):void {
@@ -32,18 +35,18 @@ public class FacebookGetFriendsDataService implements IFacebookUserGetFriendsDat
         var friends:Array = response as Array;
         var l:uint = friends.length;
 
-        var frds:Array = new Array();
+        var f_array:Array = new Array();
 
         for (var i:uint = 0; i < l; i++) {
             var friend:Object = friends[i];
             var f:FacebookUser = new FacebookUser();
             f.id = friend['id'];
             f.name = friend['name'];
-            f.picture = friend['picture'];
-            frds.push(f);
+            f.picture = new FacebookUserPicture(friend['picture']);
+            f_array.push(f);
         }
 
-        (user as FacebookUser).friends = frds;
+        (user as FacebookUser).friends = f_array;
     }
 }
 }

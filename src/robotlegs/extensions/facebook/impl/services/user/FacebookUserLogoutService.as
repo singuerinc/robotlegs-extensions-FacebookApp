@@ -1,3 +1,9 @@
+//------------------------------------------------------------------------------
+//  Copyright (c) 2012-2013 the original author or authors. All Rights Reserved.
+//
+//  NOTICE: You are permitted to use, modify, and distribute this file
+//  in accordance with the terms of the license agreement accompanying it.
+//------------------------------------------------------------------------------
 package robotlegs.extensions.facebook.impl.services.user {
 import com.facebook.graph.Facebook;
 
@@ -8,9 +14,6 @@ import robotlegs.bender.framework.api.ILogger;
 import robotlegs.extensions.facebook.api.services.user.IFacebookUserLogoutService;
 import robotlegs.extensions.facebook.impl.model.user.FacebookUser;
 
-/**
- * @author nahuel.scotti @ gmail.com
- */
 public class FacebookUserLogoutService implements IFacebookUserLogoutService {
     [Inject]
     public var user:FacebookUser;
