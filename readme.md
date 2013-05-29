@@ -1,6 +1,6 @@
 ## BASIC
 
-### Extend your context with FacebookExtension:
+### Install FabookExtension:
 
     _context = new Context()
             .install(MVCSBundle)
@@ -8,7 +8,7 @@
             .configure(FacebookAppConfig)
             .configure(new ContextView(this));
 
-### Configure extension:
+### Configure the extension:
 
     public class FacebookAppConfig {
         [Inject]
@@ -26,6 +26,7 @@
 
 ## DEPENDENCIES
 Robotlegs Framework: https://github.com/robotlegs/robotlegs-framework
+
 Adobe ActionScript 3 SDK for Facebook Platform: http://code.google.com/p/facebook-actionscript-api/
 
 ## TUTORIAL (spanish)
