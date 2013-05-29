@@ -1,12 +1,14 @@
-# BASIC
+## BASIC
 
-## Extend your context with FacebookExtension:
+### Extend your context with FacebookExtension:
 
-    _context = new Context();
-    _context.extend(MVCSBundle, FacebookExtension);
-    _context.configure(FacebookAppConfig, this);
+    _context = new Context()
+            .install(MVCSBundle)
+            .install(FacebookExtension)
+            .configure(FacebookAppConfig)
+            .configure(new ContextView(this));
 
-## Configure extension:
+### Configure extension:
 
     public class FacebookAppConfig {
         [Inject]
@@ -16,17 +18,18 @@
 
         [PostConstruct]
         public function init():void {
-            service.api_key = 'YOUR_APP_KEY_HERE';
+
+            service.api_key = 'your_facebook_app_id';
             eventDispatcher.dispatchEvent(new FacebookEvent(FacebookEvent.API_INIT_REQUEST));
         }
     }
 
-# DEPENDENCIES
+## DEPENDENCIES
+Robotlegs Framework: https://github.com/robotlegs/robotlegs-framework
 Adobe ActionScript 3 SDK for Facebook Platform: http://code.google.com/p/facebook-actionscript-api/
 
-# TUTORIAL (spanish)
-http://blog.singuerinc.net/?p=217
+## TUTORIAL (spanish)
+http://blog.singuerinc.com/blog/2013/05/29/robotlegs-2-facebook-app/
 
-# TODO:
+## TODO:
 + Unit tests
-+ Rename github project to "robotlegs-extensions-FacebookApp"
